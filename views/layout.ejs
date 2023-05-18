@@ -1,39 +1,54 @@
-<!-- UT-NodeJS 중간고사 -->
+<!-- layout.ejs -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
+    <!-- @TODO: -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>UT-NodeJS 중간고사 | Aaron Snowberger</title>
+    <title>Final Project | <%= title %></title>
+    <!-- @TODO: title태그를 완성하십시오 -->
 
-    <!-- 학생 이름과 학번 -->
-    <meta name="author" content="Aaron Snowberger" />
-    <meta name="description" content="Midterm Test" />
+    <meta name="author" content="Aaron" />
+    <!-- @TODO: 자기 이름을 작성하십시오 -->
 
-    <!-- CSS 파일에 대한 link테그를 수정하십시오 -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- @TODO: CSS 파일에 대한 link테그를 완성하십시오 -->
     <link rel="stylesheet" href="/css/style.css" />
+    <!-- Compiled: https://codepen.io/fionnachan/pen/EvaqOB -->
+    <!-- <link rel="stylesheet" href="css/confetti.css" /> -->
     <link
       rel="stylesheet"
       media="(max-width: 768px)"
       href="/css/style.small.css"
     />
 
-    <!-- JS 파일에 대한 script테그를 수정하십시오 -->
-    <script defer src="/js/functions.js"></script>
+    <!-- @TODO: -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="/css/aaronkr.css" /> -->
   </head>
-
   <body>
-    <!-- HEADER -->
-    <%- include('partials/header') %>
+    <%- include('_partials/_header') %> <%- body %> <%-
+    include('_partials/_footer') %>
 
-    <!-- MAIN 페이지 내용 -->
-    <%- body %>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/js/jquery-3.7.0.slim.js"></script>
+    
+    <!-- Popper Development version -->
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
 
-    <!-- FOOTER -->
-    <%- include('partials/footer') %>
+    <!-- Popper Production version
+    <script src="https://unpkg.com/@popperjs/core@2"></script> -->
 
-    <!-- Bootstrap의 JS -->
+    <!-- Bootstrap -->
     <script src="/js/bootstrap.bundle.min.js"></script>
+
+    <!-- @TODO: JS 파일에 대한 script테그를 완성하십시오 -->
+    <script src="/js/functions.js"></script>
   </body>
-</html>
+
+  <!--
+    [노트] 레이아웃 파일은 방문하는 모든 페이지상에서 렌더링된다.
+    한 번 < %- body % >의 전후로 HTML 콘텐츠를 추가해보라. 
+    모든 페이지에 추가 내용이 반영될 것이다.
+--></html>
