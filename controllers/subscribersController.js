@@ -50,14 +50,10 @@ module.exports = {
   // 사용자를 데이터베이스에 저장하기 위한 create 액션 추가
   create: (req, res, next) => {
     let subscriberParams = {
-      name: {
-        first: req.body.first,
-        last: req.body.last,
-      },
+      name: req.body.name,
       email: req.body.email,
-      username: req.body.username,
-      password: req.body.password,
-      profileImg: req.body.profileImg,
+      phone: req.body.phone,
+      newsletter: req.body.newsletter,
     };
     // 폼 파라미터로 사용자 생성
     Subscriber.create(subscriberParams)
@@ -134,16 +130,12 @@ module.exports = {
   // update 액션 추가
   update: (req, res, next) => {
     let subscriberId = req.params.id,
-      subscriberParams = {
-        name: {
-          first: req.body.first,
-          last: req.body.last,
-        },
-        email: req.body.email,
-        username: req.body.username,
-        password: req.body.password,
-        profileImg: req.body.profileImg,
-      }; // 요청으로부터 사용자 파라미터 취득
+    subscriberParams = {
+      name: req.body.name,
+      email: req.body.email,
+      phone: req.body.phone,
+      newsletter: req.body.newsletter,
+    }; // 요청으로부터 사용자 파라미터 취득
 
     User.findByIdAndUpdate(subscriberId, {
       $set: subscriberParams,
